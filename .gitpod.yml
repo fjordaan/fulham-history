@@ -1,0 +1,12 @@
+# List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
+tasks:
+  - name: Dev server (install Fly & Flask first)
+    init: |
+      pip install -r requirements.txt
+    command: |
+      FLASK_APP=server flask --debug run
+
+# List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
+
+
+# Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
