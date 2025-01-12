@@ -8,7 +8,6 @@ header {
   background-color: #eee;
 }
 
-
 .container {
   position: relative;
 }
@@ -19,7 +18,6 @@ section {
   align-items: start;
   border-top: 1px solid #ccc;
 }
-
 .image {
   flex: 1;
   order: 2;
@@ -31,6 +29,22 @@ section {
   justify-content: center; */
   background: pink;
 }
+
+@media (max-width: 1024px) {
+  section {
+    flex-direction: column;
+  }
+  .image {
+    /* order: 0; */
+    position: relative;
+    width: 100%;
+    flex-basis: auto;
+    outline: 5px solid red;
+  }
+}
+
+
+
 .img {
   position: absolute;
   top: 0;
@@ -58,27 +72,29 @@ section {
     background-image: url('../img/1966.jpg');
 }
 #img-1966b {
-  background-image: url('../img/1966b-test.jpg');
+  /* background-image: url('../img/1966b-test.jpg'); */
+  background-image: url('../img/1966b.jpg');
 }
 #img-1981 {
-    background-image: url('../img/1981-test.jpg');
+    /* background-image: url('../img/1981-test.jpg'); */
+    background-image: url('../img/1981.jpg');
 }
-
 
 .hidden {
   display: none;
 }
-.marker.hidden {
-  display: none;
-}
-/* .zoom .marker {
-  display: flex;
-} */
+
 .btn-fit {
   position: absolute;
   z-index: 10;
   top: 10px;
   right: 10px;
+}
+.btn-markers {
+  position: absolute;
+  /* position: sticky; */
+  top: 10px;
+  right: 50px;
 }
 .date {
   position: absolute;
@@ -91,16 +107,10 @@ section {
   font-size: 18px;
   padding: 5px 20px;
 }
-.btn-markers {
-  position: absolute;
-  /* position: sticky; */
-  top: 10px;
-  right: 10px;
-}
 .markers {
   position: absolute;
   z-index: 20;
-  pointer-events: none;
+  /* pointer-events: none; */
   top: 0;
   left: 0;
   right: 0;
@@ -155,6 +165,13 @@ section {
   display: block;
   border-color: rgba(255, 255, 255, 0.7);
 }
+.fit .marker .label {
+  display: none;
+}
+.fit .marker:hover .label {
+  display: inline;
+}
+
 .marker.currentmarker {
   display: block;
   left: 50%;

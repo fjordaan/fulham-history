@@ -149,6 +149,11 @@ $(document).ready(function() {
 			// const buttonId = $(this).attr('data-id');  // Get the button's ID
 			const featureId = $(this).attr('id');  // Get the feature's ID
 			const position = positionData[featureId];  // Get the corresponding position data from JSON
+
+			$('html, body').animate({
+				scrollTop: $('#testID').offset().top
+			  }, 'smooth');
+			  
 		
 			// If position data exists for the button clicked
 			if (position) {
