@@ -27,37 +27,161 @@
 
   <main>
     <div class="container">
-      <section id="1940-1966">
-        <div class="image">
+      <section id="section-1940-1966">
+        <div class="image fit">
           <button class="btn-fit js-fit">Fit</button>
+          <ul class="markers">
+            <li class="marker marker-1940-66-a4">
+              <span class="label">A4 and Hammersmith College</span>
+            </li>
+            <!-- <li class="marker marker-1940-66-broadway">
+              <span class="label">Hammersmith Broadway</span>
+            </li> -->
+            <li class="marker marker-1940-66-charingx">
+              <span class="label">Charing Cross Hospital construction</span>
+            </li>
+            <li class="marker marker-1940-66-fieldroad">
+              <span class="label">Field Road estate</span>
+            </li>
+            <li class="marker marker-1940-66-lillierec">
+              <span class="label">Lillie Rec bandstand</span>
+            </li>
+            <li class="marker marker-1940-66-cemetery">
+              <span class="label">Fulham Cemetery trees</span>
+            </li>
+            <li class="marker marker-1940-66-clematlee">
+              <span class="label">Clem Atlee estate</span>
+            </li>
+            <li class="marker marker-1940-66-empress">
+              <span class="label">Empress State Building</span>
+            </li>
+            <li class="marker marker-1940-66-fulhamestate">
+              <span class="label">Fulham Estate</span>
+            </li>
+          </ul>
           <div class="img img-old" id="img-1940">
-            <div class="marker" id="mark-charingX1940">Marker</div>
+            <div class="date">27 Sep 1940</div>   
           </div>
-          <div class="img img-new hidden" id="img-1966"></div>
+          <div class="img img-new hidden" id="img-1966">
+            <div class="label">23 Jul 1966</div>
+          </div> 
+                   
         </div>
         <!-- <img src="https://placehold.co/600x400" alt="Image 1"> -->
         <div class="content">
           <h2>Comparing 1940 and 1966</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <button id="1940-66-a4" class="link">A4 and Hammersmith College</button></p>
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <button id="1940-66-broadway" class="link">Hammersmith Broadway</button></p>
-          <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. <button id="1940-66-charingx" class="link">Charing Cross Hospital construction</button></p>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. <button id="1940-66-fieldroad" class="link">Field Road estate</button></p>
-          <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. <button id="1940-66-lillierec" class="link">Lillie Rec bandstand</button></p>
-          <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. <button id="1940-66-cemetery" class="link">Fulham Cemetery trees</button></p>
-          <p>Integer malesuada nunc vel risus commodo viverra maecenas accumsan. <button id="1940-66-clematlee" class="link">Clem Atlee estate</button></p>
-          <p>Integer malesuada nunc vel risus commodo viverra maecenas accumsan. <button id="1940-66-empress" class="link">Empress State Building</button></p>
-          <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. <button id="1940-66-fulhamestate" class="link">Fulham Estate</button></p>
+          <button class="btn-markers js-showMarkers">Toggle markers</button>
+          <div class="feature" id="1940-66-a4">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <button data-id="1940-66-a4" class="link">A4 and Hammersmith College</button></p>
+          </div>
+          <!-- <div class="feature" id="1940-66-broadway">
+            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <button data-id="1940-66-broadway" class="link">Hammersmith Broadway</button></p>
+          </div> -->
+          <div class="feature" id="1940-66-charingx">
+            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. <button data-id="1940-66-charingx" class="link">Charing Cross Hospital construction</button></p>
+          </div>
+          <div class="feature" id="1940-66-fieldroad">
+            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. <button data-id="1940-66-fieldroad" class="link">Field Road estate</button></p>
+          </div>
+          <div class="feature" id="1940-66-lillierec">
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt. <button data-id="1940-66-lillierec" class="link">Lillie Rec bandstand</button></p>
+          </div>
+          <div class="feature" id="1940-66-cemetery">
+            <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. <button data-id="1940-66-cemetery" class="link">Fulham Cemetery trees</button></p>
+          </div>
+          <div class="feature" id="1940-66-clematlee">
+            <p>Integer malesuada nunc vel risus commodo viverra maecenas accumsan. <button data-id="1940-66-clematlee" class="link">Clem Atlee estate</button></p>
+          </div>
+          <div class="feature" id="1940-66-empress">
+            <p>Integer malesuada nunc vel risus commodo viverra maecenas accumsan. <button data-id="1940-66-empress" class="link">Empress State Building</button></p>
+          </div>
+          <div class="feature" id="1940-66-fulhamestate">
+            <p>Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. <button data-id="1940-66-fulhamestate" class="link">Fulham Estate</button></p>
+          </div>
+
+          <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
+          <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
+          <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
+          <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
+          <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
         </div>
       </section>
-      <section id="1966-1981">
-        <div class="image">
+
+
+      <section id="section-1966-1981">
+        <div class="image fit">
           <button class="btn-fit js-fit">Fit</button>
-          <div class="img img-old" id="img-1966-2">
+          <ul class="markers">
+            <li class="marker marker-1966-81-margravine" style="left: 31.22%; top: 0.00%; width: 6.38%; height: 6.38%;">
+              <span class="label">Elm trees Margravine</span>
+            </li>
+            <li class="marker marker-1966-81-fulhamcem" style="left: 34.83%; top: 46.53%; width: 8.91%; height: 8.91%;">
+              <span class="label">Elm trees Fulham Cem</span>
+            </li>
+            <li class="marker marker-1966-81-bayonne" style="left: 34.05%; top: 15.49%; width: 22.16%; height: 22.16%;">
+              <span class="label">Bayonne Estate, Abbey Gardens</span>
+            </li>
+            <li class="marker marker-1966-81-aintree" style="left: 56.21%; top: 38.53%; width: 11.06%; height: 11.06%;">
+              <span class="label">Aintree Estate, Hartopp &amp; Lannoy towers</span>
+            </li>
+            <li class="marker marker-1966-81-riverside" style="left: 8.13%; top: 51.95%; width: 17.92%; height: 17.92%;">
+              <span class="label">Riverside estates, Rowberry Mead</span>
+            </li>
+            <li class="marker marker-1966-81-crabtree" style="left: 6.58%; top: 35.90%; width: 10.52%; height: 10.52%;">
+              <span class="label">Crabtree pub, barges</span>
+            </li>
+            <li class="marker marker-1966-81-frankbanfield" style="left: 4.77%; top: 0.00%; width: 12.96%; height: 12.96%;">
+              <span class="label">Frank Banfield park</span>
+            </li>
+            <li class="marker marker-1966-81-charingx" style="left: 17.10%; top: 1.62%; width: 19.97%; height: 19.97%;">
+              <span class="label">Charing Cross hospital</span>
+            </li>
+            <li class="marker marker-1966-81-rivergardens" style="left: 12.62%; top: 72.76%; width: 8.96%; height: 8.96%;">
+              <span class="label">River Gardens</span>
+            </li>
+            
+          </ul>
+          <div class="img img-old" id="img-1966b">
+            <div class="date">23 Jul 1966</div>   
           </div>
-          <div class="img img-new hidden" id="img-1981"></div>
+          <div class="img img-new hidden" id="img-1981">
+            <div class="date">13 Oct 1981</div>   
+          </div>
         </div>
+        
         <div class="content">
+          <button class="btn-markers js-showMarkers">Toggle markers</button>
           <h2>Comparing 1966 and 1981</h2>
+          <div class="feature" id="1966-81-margravine">
+            <p>Elm trees Margravine. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="feature" id="1966-81-fulhamcem">
+            <p>Elm trees Fulham Cem. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+          <div class="feature" id="1966-81-bayonne">
+            <p>Bayonne Estate, Abbey Gardens. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          </div>
+          <div class="feature" id="1966-81-aintree">
+            <p>Aintree Estate, Hartopp &amp; Lannoy towers. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+          <div class="feature" id="1966-81-riverside">
+            <p>Riverside estates, Rowberry Mead. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div class="feature" id="1966-81-crabtree">
+            <p>Crabtree pub, barges. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+          </div>
+          <div class="feature" id="1966-81-frankbanfield">
+            <p>Frank Banfield park. Velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+          </div>
+          <div class="feature" id="1966-81-charingx">
+            <p>Charing Cross hospital. At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+          </div>
+          <div class="feature" id="1966-81-rivergardens">
+            <p>River Gardens. Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
+          </div>
+          
+
+
     
           <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
           <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>

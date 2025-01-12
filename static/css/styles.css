@@ -17,6 +17,7 @@ section {
   display: flex;
   min-height: 100vh; /* Each section takes at least the viewport height */
   align-items: start;
+  border-top: 1px solid #ccc;
 }
 
 .image {
@@ -30,54 +31,147 @@ section {
   justify-content: center; */
   background: pink;
 }
-
 .img {
   position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #fff;
-  background-size: contain;
+  background-color: #ddd;
+  /* background-size: contain; */
   background-repeat: no-repeat;
   /* border: 1px solid red; */
 }
+.fit .img {
+  background-size: contain;
+}
+.zoom .img {
+  background-size: auto;
+}
+
 #img-1940 {
+  /* background-image: url('../img/1940-test.jpg'); */
   background-image: url('../img/1940.jpg');
 }
 #img-1966 {
+    /* background-image: url('../img/1966-test.jpg'); */
     background-image: url('../img/1966.jpg');
 }
-
+#img-1966b {
+  background-image: url('../img/1966b-test.jpg');
+}
+#img-1981 {
+    background-image: url('../img/1981-test.jpg');
+}
 
 
 .hidden {
   display: none;
 }
+.marker.hidden {
+  display: none;
+}
+/* .zoom .marker {
+  display: flex;
+} */
 .btn-fit {
   position: absolute;
   z-index: 10;
   top: 10px;
   right: 10px;
 }
-.marker {
+.date {
   position: absolute;
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  top: 50%;
-  left: 50%;
-  display: none;
-  /* display: flex; */
-  align-items: center;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 2px solid #fff;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 5px 20px;
+}
+.btn-markers {
+  position: absolute;
+  /* position: sticky; */
+  top: 10px;
+  right: 10px;
+}
+.markers {
+  position: absolute;
+  z-index: 20;
+  pointer-events: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  /* aspect-ratio: 2240 / 2060; */
+  border: 1px solid red;
 }
 
+#section-1940-1966 .markers {
+  aspect-ratio: 2240 / 2060;
+}
+#section-1966-1981 .markers {
+  aspect-ratio: 2053 / 1975;
+  border-color: cyan;
+}
 
+.zoom .markers {
+  aspect-ratio: auto !important;
+  bottom: 0;
+}
+
+.marker {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  display: none;
+  align-items: center;
+  text-align: center;
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  border: 8px solid rgba(255, 255, 255, 0.4);
+}
+.marker .label {
+  position: absolute;
+  bottom: 0;
+  /* max-width: 200px; */
+  padding: 2px 10px;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  white-space: nowrap;;
+  transform: translate(-50%, calc(100% + 8px));
+}
+
+.fit .marker.show {
+  display: block;
+}
+.fit .marker.highlight {
+  display: block;
+  border-color: rgba(255, 255, 255, 0.7);
+}
+.marker.currentmarker {
+  display: block;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.zoom:hover .marker.currentmarker {
+  display: none;
+  /* opacity: .2; */
+}
+/* .marker.currentmarker:hover {
+  opacity: 1 !important;
+  outline: 4px solid red;
+} */
 
 .content {
+  position: relative;
   flex: 1;
   padding: 40px;
   max-width: 680px;
@@ -85,6 +179,21 @@ section {
   line-height: 1.5;
   background: #fff;
 }
+.feature {
+  position: relative;
+  padding: 0 10px;
+}
+.feature:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.feature:active {
+  top: 1px;
+}
+.feature.selected {
+  background-color: rgba(0, 0, 255, 0.05);
+}
+
+
 
 section:nth-child(even) {
   background: #f9f9f9;
@@ -94,13 +203,60 @@ section:nth-child(odd) {
   background: #e9e9e9;
 }
 
-.image {
-  background-size: cover;
-}
 
-.image-1940 {
-  background-image: url('../img/1940.jpg');
+/* Markers */
+
+.marker-1940-66-a4 {
+  left: 28.30%;
+  top: 9.13%;
+  width: 20.31%;
+  height: 20.31%;
 }
-.image-1940#pos1 {
-  background-position: 50% 50%;
+.marker-1940-66-broadway {
+  left: 2.46%;
+  top: 6.36%;
+  width: 11.88%;
+  height: 11.88%;
+}
+.marker-1940-66-charingx {
+  left: 15.31%;
+  top: 31.21%;
+  width: 15.45%;
+  height: 15.45%;
+}
+.marker-1940-66-fieldroad {
+  left: 34.11%;
+  top: 32.33%;
+  width: 10.40%;
+  height: 10.40%;
+}
+.marker-1940-66-lillierec {
+  left: 25.67%;
+  top: 56.99%;
+  width: 12.05%;
+  height: 12.05%;
+}
+.marker-1940-66-cemetery {
+  left: 28.53%;
+  top: 70.10%;
+  width: 12.28%;
+  height: 12.28%;
+}
+.marker-1940-66-clematlee {
+  left: 56.70%;
+  top: 42.91%;
+  width: 20.31%;
+  height: 20.31%;
+}
+.marker-1940-66-empress {
+  left: 74.33%;
+  top: 28.88%;
+  width: 15.45%;
+  height: 15.45%;
+}
+.marker-1940-66-fulhamestate {
+  left: 69.24%;
+  top: 70.10%;
+  width: 15.45%;
+  height: 15.45%;
 }
