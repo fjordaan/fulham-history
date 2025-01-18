@@ -1,13 +1,21 @@
 
 // Preload all the images
-document.addEventListener('DOMContentLoaded', () => {
-	const images = Array.from(document.querySelectorAll('img'));
-	images.forEach(img => {
-	  const preloadImg = new Image();
-	  preloadImg.src = img.src;
-	});
-  }); 
-
+function preloadImages(imageUrls) {
+    imageUrls.forEach(url => {
+        const img = new Image();
+		img.onload = () => console.log(`Image loaded successfully: ${url}`);
+        img.onerror = () => console.error(`Error loading image: ${url}`);
+        img.src = url;
+    });
+    console.log('Images preloaded:', imageUrls);
+}
+// Specify the images to preload
+preloadImages([
+    'img/1940.jpg',
+    'img/1966.jpg',
+    'img/1966b.jpg',
+    'img/1981.jpg'
+]);
  
  // https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
 //   const el = document.querySelector(".section-header")
@@ -174,11 +182,14 @@ $(document).ready(function() {
 			const featureId = $(this).attr('id');  // Get the feature's ID
 			const position = positionData[featureId];  // Get the corresponding position data from JSON
 
-			$('html, body').animate({
-				scrollTop: $(`#${parentSectionId}`).offset().top
-			  }, 'smooth');
-			  
-			  history.pushState(null, '', `#${parentSectionId}`);			  
+			if (window.matchMedia("(max-width: 1024px)").matches) {
+				// Only scroll to top (to show image) on mobile
+				$('html, body').animate({
+					scrollTop: $(`#${parentSectionId}`).offset().top
+				  }, 'smooth');
+				  
+				  history.pushState(null, '', `#${parentSectionId}`);
+			}		  
 		
 			// If position data exists for the button clicked
 			if (position) {
@@ -195,7 +206,11 @@ $(document).ready(function() {
 					'background-position': negXpos + 'px ' + negYpos + 'px'
 				});
 
-				// Show this marker
+				// Show this marker and restore any previously zoomed markers
+				$('#' + parentSectionId).find('.currentmarker').css({
+					'width': '',
+					'height': ''
+				});
 				$('#' + parentSectionId).find('.marker').removeClass('currentmarker');
 				$(`.marker-${featureId}`).addClass('currentmarker');
 				$(`.marker-${featureId}`).css({
