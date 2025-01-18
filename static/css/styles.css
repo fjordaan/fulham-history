@@ -30,7 +30,6 @@ section {
   /* display: flex;
   align-items: center;
   justify-content: center; */
-  background: pink;
 }
 
 .img {
@@ -113,6 +112,7 @@ section {
   border: 1px solid #666;
   border-radius: 4px;
   font-size: 16px;
+  color: #000;
 }
 .btn:hover {
   background-color: ddd;
@@ -381,6 +381,9 @@ section:nth-child(odd) {
 
 
 @media (max-width: 1024px) {
+  header {
+    padding: 20px;
+  }
   section {
     flex-direction: column;
   }
