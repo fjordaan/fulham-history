@@ -35,19 +35,6 @@ section {
   background: pink;
 }
 
-@media (max-width: 1024px) {
-  section {
-    flex-direction: column;
-  }
-  .image {
-    /* order: 0; */
-    position: relative;
-    width: 100%;
-    flex-basis: auto;
-    outline: 5px solid red;
-  }
-}
-
 .img {
   position: absolute;
   top: 0;
@@ -327,4 +314,50 @@ section:nth-child(odd) {
   top: 70.10%;
   width: 15.45%;
   height: 15.45%;
+}
+
+
+@media (max-width: 1024px) {
+  section {
+    flex-direction: column;
+  }
+  .image {
+    order: 0;
+    position: relative;
+    width: 100%;
+    flex-basis: auto;
+    overflow: hidden;
+  }
+  #section-1940-1966 .image {
+    aspect-ratio: 2240 / 2060;
+    height: auto;
+  }
+  #section-1966-1981 .image {
+    aspect-ratio: 2053 / 1975;
+    height: auto;
+  }
+  .section-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 -20px;
+  }
+  .section-header.is-pinned {
+    padding: 12px 0;
+  }
+  .section-header .buttons {
+    top: -50px;
+  }
+  .section-title {
+    font-size: 20px;
+  }
+  .section-subtitle {
+    font-size: 13px;
+  }
+  .content {
+    padding: 0 20px;
+    font-size: 16px;
+  }
+  .feature {
+    padding: 0;
+  }
 }

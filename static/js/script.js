@@ -10,12 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
  
  // https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
-  const el = document.querySelector(".section-header")
-  const observer = new IntersectionObserver( 
-	([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-	{ threshold: [1] }
-  );
-  observer.observe(el);
+//   const el = document.querySelector(".section-header")
+//   const observer = new IntersectionObserver( 
+// 	([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+// 	{ threshold: [1] }
+//   );
+//   observer.observe(el);
 
 
 $('.js-test').click(function(){
@@ -175,9 +175,10 @@ $(document).ready(function() {
 			const position = positionData[featureId];  // Get the corresponding position data from JSON
 
 			$('html, body').animate({
-				scrollTop: $('#testID').offset().top
+				scrollTop: $(`#${parentSectionId}`).offset().top
 			  }, 'smooth');
 			  
+			  history.pushState(null, '', `#${parentSectionId}`);			  
 		
 			// If position data exists for the button clicked
 			if (position) {
