@@ -41,7 +41,7 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #ddd;
+  background-color: #333;
   /* background-size: contain; */
   background-repeat: no-repeat;
   /* border: 1px solid red; */
@@ -182,6 +182,15 @@ section {
   /* background-color: rgba(255, 255, 255, 0.1); */
   border: 8px solid rgba(255, 255, 255, 0.4);
 }
+.marker a {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background-color: yellow; */
+}
 .marker .label {
   position: absolute;
   bottom: 0;
@@ -315,6 +324,62 @@ section:nth-child(odd) {
   width: 15.45%;
   height: 15.45%;
 }
+
+.marker-1966-81-margravine {
+  left: 31.22%;
+  top: 0.00%;
+  width: 6.38%;
+  height: 6.38%;
+}
+.marker-1966-81-fulhamcem {
+  left: 34.83%;
+  top: 46.53%;
+  width: 8.91%;
+  height: 8.91%;
+}
+.marker-1966-81-bayonne {
+  left: 34.05%;
+  top: 15.49%;
+  width: 22.16%;
+  height: 22.16%;
+}
+.marker-1966-81-aintree {
+  left: 56.21%;
+  top: 38.53%;
+  width: 11.06%;
+  height: 11.06%;
+}
+.marker-1966-81-riverside {
+  left: 8.13%;
+  top: 51.95%;
+  width: 17.92%;
+  height: 17.92%;
+}
+.marker-1966-81-crabtree {
+  left: 6.58%;
+  top: 35.90%;
+  width: 10.52%;
+  height: 10.52%;
+}
+.marker-1966-81-frankbanfield {
+  left: 4.77%;
+  top: 0.00%;
+  width: 12.96%;
+  height: 12.96%;
+}
+.marker-1966-81-charingx {
+  left: 17.10%;
+  top: 1.62%;
+  width: 19.97%;
+  height: 19.97%;
+}
+.marker-1966-81-rivergardens {
+  left: 12.62%;
+  top: 72.76%;
+  width: 8.96%;
+  height: 8.96%;
+}
+
 
 
 @media (max-width: 1024px) {

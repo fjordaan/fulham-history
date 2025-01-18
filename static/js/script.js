@@ -208,6 +208,21 @@ $(document).ready(function() {
 	});
   });
 
+ // Scroll to the relevant section when the marker is clicked 
+ $('.marker a').on('click', function(event) {
+    event.preventDefault();
+    const targetId = $(this).attr('href'); // Get the href value (e.g., #section-id)
+    
+    // Scroll to the target position minus 130px
+    $('html, body').animate({
+        scrollTop: $(targetId).offset().top - 130
+    }, 'smooth');
+    
+    // Update the URL and browser history
+    history.pushState(null, '', targetId);
+});
+
+
 
   // Highlight marker when mousing over feature description
   $('.feature').on('mouseenter mouseleave', function () {
