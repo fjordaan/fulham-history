@@ -6,6 +6,11 @@ body {
 header {
   padding: 40px;
   background-color: #eee;
+  position: sticky;
+  top: 0;
+}
+.header.is-pinned {
+  background-color: yellow;
 }
 
 .container {
@@ -43,8 +48,6 @@ section {
   }
 }
 
-
-
 .img {
   position: absolute;
   top: 0;
@@ -56,10 +59,10 @@ section {
   background-repeat: no-repeat;
   /* border: 1px solid red; */
 }
-.fit .img {
+.map-fit .img {
   background-size: contain;
 }
-.zoom .img {
+.map-zoomed .img {
   background-size: auto;
 }
 
@@ -84,18 +87,66 @@ section {
   display: none;
 }
 
-.btn-fit {
+.section-header {
+  position: sticky;
+  z-index: 100;
+  top: -1px;
+  margin-left: -40px;
+  margin-right: -40px;
+  padding: 32px 40px;
+  border-bottom: 1px solid #ccc;
+  background-color: white;
+  /* transition: padding 0.1s ease; */
+}
+.section-header.is-pinned {
+  padding: 12px 40px;
+}
+.section-title {
+  margin: 0;
+}
+.section-subtitle {
+  margin: 0 0 0 0;
+  /* font-style: italic; */
+  font-size: 16px;
+  color: #999;
+}
+
+.buttons {
   position: absolute;
   z-index: 10;
   top: 10px;
   right: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 8px;
 }
-.btn-markers {
-  position: absolute;
-  /* position: sticky; */
-  top: 10px;
-  right: 50px;
+.btn {
+  position: relative;
+  padding: 6px 12px;
+  height: 40px;
+  background-color: #eee;
+  border: 1px solid #666;
+  border-radius: 4px;
+  font-size: 16px;
 }
+.btn:hover {
+  background-color: ddd;
+  border-color: #000;
+  cursor: pointer;
+}
+.btn:active {
+  top: 1px;
+}
+.map-fit .btn-fit {
+  display: none;
+}
+.map-zoomed .btn-markers {
+  display: none;
+}
+.markers-shown .marker {
+  display: block;
+}
+
 .date {
   position: absolute;
   top: 0;
@@ -128,7 +179,7 @@ section {
   border-color: cyan;
 }
 
-.zoom .markers {
+.map-zoomed .markers {
   aspect-ratio: auto !important;
   bottom: 0;
 }
@@ -158,17 +209,17 @@ section {
   transform: translate(-50%, calc(100% + 8px));
 }
 
-.fit .marker.show {
+.map-fit .marker.show {
   display: block;
 }
-.fit .marker.highlight {
+.map-fit .marker.highlight {
   display: block;
   border-color: rgba(255, 255, 255, 0.7);
 }
-.fit .marker .label {
+.map-fit .marker .label {
   display: none;
 }
-.fit .marker:hover .label {
+.map-fit .marker:hover .label {
   display: inline;
 }
 
@@ -178,7 +229,7 @@ section {
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.zoom:hover .marker.currentmarker {
+.map-zoomed .image:hover .marker.currentmarker {
   display: none;
   /* opacity: .2; */
 }
@@ -190,9 +241,9 @@ section {
 .content {
   position: relative;
   flex: 1;
-  padding: 40px;
+  padding: 0 40px;
   max-width: 680px;
-  font-size: 20px;
+  font-size: 18px; /* 20px; */
   line-height: 1.5;
   background: #fff;
 }

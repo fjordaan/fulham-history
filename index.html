@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
     <title>Fulham History</title>
   
@@ -27,8 +28,9 @@
 
   <main>
     <div class="container">
-      <section id="section-1940-1966">
-        <div class="image fit" id="testID">
+
+      <section id="section-1940-1966" class="map-fit">
+        <div class="image" id="testID">
           <ul class="markers">
             <li class="marker marker-1940-66-a4">
               <span class="label">A4 and Hammersmith College</span>
@@ -62,23 +64,30 @@
             <div class="date">27 Sep 1940</div>   
           </div>
           <div class="img img-new hidden" id="img-1966">
-            <div class="label">23 Jul 1966</div>
+            <div class="date">23 Jul 1966</div>
           </div> 
                    
         </div>
-        <!-- <img src="https://placehold.co/600x400" alt="Image 1"> -->
+        
         <div class="content">
-          <h2>Comparing 1940 and 1966</h2>
-          <button class="btn-fit js-fit">Fit</button>
-          <button class="btn-markers js-showMarkers">Toggle markers</button>
-          <div class="feature" id="1940-66-a4">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <button data-id="1940-66-a4" class="link">A4 and Hammersmith College</button></p>
+          <div class="section-header">
+            <h2 class="section-title">Comparing 1940 and 1966</h2>
+            <p class="section-subtitle">27 Sep 1940 (autumn) and 3 Jul 1966 (summer)</p>
+            <div class="buttons">
+              <button class="btn btn-fit js-fit" title="Zoom out to fit"><span class="material-symbols-outlined" aria-hidden="true">zoom_out_map</span></button>
+              <button class="btn btn-markers js-showMarkers">Toggle markers</button>
+            </div>
           </div>
-          <!-- <div class="feature" id="1940-66-broadway">
-            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <button data-id="1940-66-broadway" class="link">Hammersmith Broadway</button></p>
-          </div> -->
+          <div class="feature" id="1940-66-a4">
+            <h3>A4 motorway</h3>
+            <p>The 1940 photo shows the area north of the District and Piccadilly railway lines as entirely residential. The 1966 photo shows the new motorway constructed in YEAR. Previously, the beautiful terraced houses north of the railway, constructed in YEAR for “bachelor artists”, looked out over the playing fields of PARK, which in YEAR gave way to the Hammersmith College (see 1966-81). Today those houses look out over 6 lanes of never-ending traffic. </p>
+            <p>The motorway was bulldozed through Victorian terraces purchased by compulsory purchase order [?], with many streets disconnected into a southern and a northern part. Previously traffic flowed along Hammersmith Road and King Street, badly unsuited to the volume of traffic.</p>
+
+          </div>
           <div class="feature" id="1940-66-charingx">
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. <button data-id="1940-66-charingx" class="link">Charing Cross Hospital construction</button></p>
+            <h3>Charing Cross Hospital</h3>
+            <p>The 1940 photo shows the old Fulham Hospital, previously the Fulham Workhouse.</p>
+            <p>The 1966 shows a vast construction site, for the construction of the new Charing Cross Hospital, moved here from Charing Cross.  This was given the go-ahead in DATE and was completed in DATE at the cost of £££, then the most expensive hospital project in the UK to date. See 1966-91 for its completion.</p>
           </div>
           <div class="feature" id="1940-66-fieldroad">
             <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. <button data-id="1940-66-fieldroad" class="link">Field Road estate</button></p>
@@ -107,9 +116,8 @@
         </div>
       </section>
 
-
-      <section id="section-1966-1981">
-        <div class="image fit">
+      <section id="section-1966-1981" class="map-fit">
+        <div class="image">
           <ul class="markers">
             <li class="marker marker-1966-81-margravine" style="left: 31.22%; top: 0.00%; width: 6.38%; height: 6.38%;">
               <span class="label">Elm trees Margravine</span>
@@ -149,9 +157,14 @@
         </div>
         
         <div class="content">
-          <button class="btn-fit js-fit">Fit</button>
-          <button class="btn-markers js-showMarkers">Toggle markers</button>
-          <h2>Comparing 1966 and 1981</h2>
+          <div class="section-header">
+            <h2 class="section-title">Comparing 1966 and 1981</h2>
+            <p class="section-subtitle">27 Sep 1940 (autumn) and 3 Jul 1966 (summer)</p>
+            <div class="buttons">
+              <button class="btn btn-fit js-fit" title="Zoom out to fit"><span class="material-symbols-outlined" aria-hidden="true">zoom_out_map</span></button>
+              <button class="btn btn-markers js-showMarkers">Toggle markers</button>
+            </div>
+          </div>
           <div class="feature" id="1966-81-margravine">
             <p>Elm trees Margravine. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           </div>
@@ -228,7 +241,8 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin eget eros nec felis cursus vehicula. Phasellus ut nibh sit amet urna tempor luctus.</p>
         </div>
       </section>
-      <section id="1981-1992">
+
+      <section id="section-1981-1992" class="map-fit">
         <div class="image">
           <button class="btn-fit js-fit">Fit</button>
           <div class="img img-old" id="img-1981-2">
@@ -236,7 +250,15 @@
           <div class="img img-new hidden" id="img-1992"></div>
         </div>
         <div class="content">
-          <h2>Comparing 1981 and 1992</h2>
+          <div class="section-header">
+            <h2 class="section-title">Comparing 1981 and 1992</h2>
+            <p class="section-subtitle">27 Sep 1940 (autumn) and 3 Jul 1966 (summer)</p>
+            <div class="buttons">
+              <button class="btn btn-fit js-fit" title="Zoom out to fit"><span class="material-symbols-outlined" aria-hidden="true">zoom_out_map</span></button>
+              <button class="btn btn-markers js-showMarkers">Toggle markers</button>
+            </div>
+          </div>
+          
           <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
                   <p>Aliquam erat volutpat. Duis non libero ut nisl dapibus convallis. Fusce euismod eros non magna aliquam, vel tincidunt justo bibendum.</p>
     

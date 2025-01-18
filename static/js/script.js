@@ -1,4 +1,23 @@
 
+// Preload all the images
+document.addEventListener('DOMContentLoaded', () => {
+	const images = Array.from(document.querySelectorAll('img'));
+	images.forEach(img => {
+	  const preloadImg = new Image();
+	  preloadImg.src = img.src;
+	});
+  }); 
+
+ 
+ // https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
+  const el = document.querySelector(".section-header")
+  const observer = new IntersectionObserver( 
+	([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
+	{ threshold: [1] }
+  );
+  observer.observe(el);
+
+
 $('.js-test').click(function(){
 	alert('hello this is actually working yay');
 });
@@ -10,9 +29,13 @@ $('.image').click(function() {
 $('.js-fit').on('click', function() {
 	event.stopPropagation(); // Prevent the click from propagating to the .image element
 	parentSectionId = $(this).closest('section').attr('id'); 
-	console.log(parentSectionId);
-	$('#' + parentSectionId).find('.image').addClass('fit');
-	$('#' + parentSectionId).find('.image').removeClass('zoom');
+	$('#' + parentSectionId).addClass('map-fit');
+	$('#' + parentSectionId).removeClass('map-zoomed');
+	$('#' + parentSectionId).find('.currentmarker').css({
+		'width': '',
+		'height': ''
+	});
+	$('#' + parentSectionId).find('.marker').removeClass('currentmarker');
 	$('#' + parentSectionId).find('.img').css('background-position', '');
 });
 
@@ -134,8 +157,8 @@ $(document).ready(function() {
 		if ($(this).hasClass('selected')) {
 			$(this).removeClass('selected');
 			parentSectionId = $(this).closest('section').attr('id'); 
-			$('#' + parentSectionId).find('.image').addClass('fit');
-			$('#' + parentSectionId).find('.image').removeClass('zoom');
+			$('#' + parentSectionId).addClass('map-fit');
+			$('#' + parentSectionId).removeClass('map-zoomed');
 			$('#' + parentSectionId).find('.marker').removeClass('currentmarker');
 			$('#' + parentSectionId).find('.marker').css({
 				'width': '',
@@ -146,6 +169,7 @@ $(document).ready(function() {
 			$(this).addClass('selected');
 			$(this).siblings().removeClass('selected');
 			const parentSectionId = $(this).closest('section').attr('id'); 
+			$('#' + parentSectionId).removeClass('markers-shown');
 			// const buttonId = $(this).attr('data-id');  // Get the button's ID
 			const featureId = $(this).attr('id');  // Get the feature's ID
 			const position = positionData[featureId];  // Get the corresponding position data from JSON
@@ -164,8 +188,8 @@ $(document).ready(function() {
 				const negYpos = -position.Ypos + (parentImage.height() / 2) - (position.Radius / 2); // Add half height of parent .image, minus 100px
 		
 				// Update the background-position CSS property for both img elements
-				$('#' + parentSectionId).find('.image').addClass('zoom');
-				$('#' + parentSectionId).find('.image').removeClass('fit');
+				$('#' + parentSectionId).addClass('map-zoomed');
+				$('#' + parentSectionId).removeClass('map-fit');
 				$('#' + parentSectionId).find('.img').css({
 					'background-position': negXpos + 'px ' + negYpos + 'px'
 				});
@@ -195,13 +219,15 @@ $(document).ready(function() {
 
   $('.js-showMarkers').on('click', function () {
 	// Find the parent <section> of the clicked element
-	const parentSection = $(this).closest('section');
+	parentSectionId = $(this).closest('section').attr('id'); 
+	$('#' + parentSectionId).toggleClass('markers-shown');
 	
-	parentSection.find('.marker').each(function () {
-	  $(this).toggleClass('show');
-	});
+	// parentSection.find('.marker').each(function () {
+	//   $(this).toggleClass('show');
+	// });
   });
   
+
 
 
   
