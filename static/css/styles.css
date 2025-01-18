@@ -6,8 +6,6 @@ body {
 header {
   padding: 40px;
   background-color: #eee;
-  position: sticky;
-  top: 0;
 }
 .header.is-pinned {
   background-color: yellow;
