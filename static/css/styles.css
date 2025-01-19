@@ -49,6 +49,12 @@ section {
 .map-zoomed .img {
   background-size: auto;
 }
+.js-special {
+  border-bottom: 1px dashed #333;
+  font-size: .8em;
+  padding: 0 5px;
+  background: #ccc;
+}
 
 #img-1940 {
   /* background-image: url('../img/1940-test.jpg'); */
@@ -57,6 +63,9 @@ section {
 #img-1966 {
     /* background-image: url('../img/1966-test.jpg'); */
     background-image: url('../img/1966.jpg');
+}
+#img-1940-bombs {
+  background-image: url('../img/1940-bombs.jpg');
 }
 #img-1966b {
   /* background-image: url('../img/1966b-test.jpg'); */
@@ -130,6 +139,18 @@ section {
 }
 .markers-shown .marker {
   display: block;
+}
+.show-markers {
+  display: inline;
+}
+.hide-markers {
+  display: none;
+}
+.markers-shown .show-markers {
+  display: none;
+}
+.markers-shown .hide-markers {
+  display: inline;
 }
 
 .date {

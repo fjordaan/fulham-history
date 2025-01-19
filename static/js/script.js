@@ -31,7 +31,7 @@ $('.js-test').click(function(){
 });
 
 $('.image').click(function() {
-	$(this).find('.img').toggleClass('hidden'); // Toggle the "hidden" class
+	$(this).find('.img:not(.img-special)').toggleClass('hidden'); // Toggle the "hidden" class
 });
 
 $('.js-fit').on('click', function() {
@@ -222,6 +222,17 @@ $(document).ready(function() {
 		
 	});
   });
+
+  $('.js-special').hover(
+	function() {
+	  // On mouse enter
+	  $(this).closest('section').find('.img-special').toggleClass('hidden');
+	},
+	function() {
+	  // On mouse leave
+	  $(this).closest('section').find('.img-special').toggleClass('hidden');
+	}
+  );
 
  // Scroll to the relevant section when the marker is clicked 
  $('.marker a').on('click', function(event) {
