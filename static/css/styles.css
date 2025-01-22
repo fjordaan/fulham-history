@@ -49,6 +49,14 @@ section {
 .map-zoomed .img {
   background-size: auto;
 }
+.map-instructions {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px 20px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
 .js-special {
   border-bottom: 1px dashed #333;
   font-size: .8em;
@@ -74,6 +82,12 @@ section {
 #img-1981 {
     /* background-image: url('../img/1981-test.jpg'); */
     background-image: url('../img/1981.jpg');
+}
+#img-1981b {
+  background-image: url('../img/1981b.jpg');
+}
+#img-1990 {
+    background-image: url('../img/1990.jpg');
 }
 
 .hidden {
@@ -114,6 +128,9 @@ section {
   gap: 8px;
 }
 .btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   position: relative;
   padding: 6px 12px;
   height: 40px;
@@ -175,6 +192,17 @@ section {
   padding: 0;
   /* aspect-ratio: 2240 / 2060; */
   /* border: 1px solid red; */
+}
+.markers:hover::after {
+  content: 'Click map to swap old and new photo';
+  position: absolute;
+  bottom: 10px;
+  right: 50%;
+  transform: translateX(50%);
+  padding: 10px 20px;
+  border-radius: 24px;
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: .9em;
 }
 
 #section-1940-1966 .markers {
@@ -278,6 +306,10 @@ section {
 }
 .feature.selected {
   background-color: rgba(0, 0, 255, 0.05);
+}
+.feature p {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 20px;
 }
 
 /* Markers */
