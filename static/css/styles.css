@@ -42,6 +42,7 @@ section {
   /* background-size: contain; */
   background-repeat: no-repeat;
   /* border: 1px solid red; */
+  transition: background-position 0.3s ease;
 }
 .map-fit .img {
   background-size: contain;
@@ -107,6 +108,10 @@ section {
 }
 .section-header.is-pinned {
   padding: 12px 40px;
+  /* background-color: yellow; */
+}
+.section-header.is-pinned .section-subtitle {
+  display: none;
 }
 .section-title {
   margin: 0;
@@ -287,7 +292,8 @@ section {
 }
 .feature {
   position: relative;
-  padding: 0 10px;
+  margin: 0 -40px;
+  padding: 20px 40px;
 }
 .feature:hover {
   background-color: rgba(0, 0, 0, 0.05);
@@ -307,9 +313,18 @@ section {
 .feature.selected {
   background-color: rgba(0, 0, 255, 0.05);
 }
+.feature.selected:hover::after {
+  content: 'Click to zoom out';
+}
+.feature h3 {
+  margin-top: 0;
+}
 .feature p {
   font-family: 'Crimson Text', Georgia, serif;
   font-size: 20px;
+}
+.feature p:last-child {
+  margin-bottom: 0;
 }
 
 /* Markers */
@@ -454,7 +469,7 @@ section {
     margin: 0 -20px;
   }
   .section-header.is-pinned {
-    padding: 12px 0;
+    padding: 12px 20px;
   }
   .section-header .buttons {
     top: -50px;
@@ -470,6 +485,7 @@ section {
     font-size: 16px;
   }
   .feature {
-    padding: 0;
+    margin: 0 -20px;
+    padding: 20px;
   }
 }

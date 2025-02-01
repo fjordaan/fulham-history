@@ -17,13 +17,35 @@ preloadImages([
     'img/1981.jpg'
 ]);
  
- // https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
-//   const el = document.querySelector(".section-header")
-//   const observer = new IntersectionObserver( 
-// 	([e]) => e.target.classList.toggle("is-pinned", e.intersectionRatio < 1),
-// 	{ threshold: [1] }
-//   );
-//   observer.observe(el);
+//  https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
+// With ChatGPT improvements that accounts for the height of .section-header changing
+// (It adds a delay)
+document.addEventListener("DOMContentLoaded", () => {
+	const sectionHeader = document.querySelector(".section-header");
+	if (!sectionHeader) return;
+  
+	let isPinned = false;
+	let timeout;
+  
+	const observer = new IntersectionObserver(
+	  ([entry]) => {
+		clearTimeout(timeout); // Reset timeout on each trigger
+  
+		timeout = setTimeout(() => {
+		  const shouldPin = entry.intersectionRatio < 1;
+  
+		  if (shouldPin !== isPinned) {
+			isPinned = shouldPin;
+			sectionHeader.classList.toggle("is-pinned", shouldPin);
+		  }
+		}, 200); // Adjust the debounce delay as needed
+	  },
+	  { threshold: [1] } // Triggers when fully visible or starts getting hidden
+	);
+  
+	observer.observe(sectionHeader);
+  });
+  
 
 
 $('.js-test').click(function(){
