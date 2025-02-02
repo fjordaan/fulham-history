@@ -19,32 +19,39 @@ preloadImages([
  
 //  https://css-tricks.com/how-to-detect-when-a-sticky-element-gets-pinned/
 // With ChatGPT improvements that accounts for the height of .section-header changing
-// (It adds a delay)
+// (It adds a delay). Also to work on multiple .section-headers. Also to only
+// fire when stuck to the top of the screen.
 document.addEventListener("DOMContentLoaded", () => {
-	const sectionHeader = document.querySelector(".section-header");
-	if (!sectionHeader) return;
+	const sectionHeaders = document.querySelectorAll(".section-header");
   
-	let isPinned = false;
-	let timeout;
+	if (sectionHeaders.length === 0) return;
   
-	const observer = new IntersectionObserver(
-	  ([entry]) => {
-		clearTimeout(timeout); // Reset timeout on each trigger
+	sectionHeaders.forEach((header) => {
+	  let isPinned = false;
+	  let timeout;
   
-		timeout = setTimeout(() => {
-		  const shouldPin = entry.intersectionRatio < 1;
+	  const observer = new IntersectionObserver(
+		([entry]) => {
+		  clearTimeout(timeout); // Reset debounce timer
   
-		  if (shouldPin !== isPinned) {
-			isPinned = shouldPin;
-			sectionHeader.classList.toggle("is-pinned", shouldPin);
-		  }
-		}, 200); // Adjust the debounce delay as needed
-	  },
-	  { threshold: [1] } // Triggers when fully visible or starts getting hidden
-	);
+		  timeout = setTimeout(() => {
+			const rect = header.getBoundingClientRect();
+			const shouldPin = entry.intersectionRatio < 1 && rect.top <= 0; 
   
-	observer.observe(sectionHeader);
+			if (shouldPin !== isPinned) {
+			  isPinned = shouldPin;
+			  header.classList.toggle("is-pinned", shouldPin);
+			}
+		  }, 100); // Adjust debounce delay if needed
+		},
+		{ threshold: [1] }
+	  );
+  
+	  observer.observe(header);
+	});
   });
+  
+  
   
 
 
