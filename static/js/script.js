@@ -60,7 +60,7 @@ $('.js-test').click(function(){
 });
 
 $('.image').click(function() {
-	$(this).find('.img:not(.img-special)').toggleClass('hidden'); // Toggle the "hidden" class
+	$(this).find('.img:not(.img-overlay)').toggleClass('hidden'); // Toggle the "hidden" class
 });
 
 $('.js-fit').on('click', function() {
@@ -252,16 +252,38 @@ $(document).ready(function() {
 	});
   });
 
-  $('.js-special').hover(
-	function() {
-	  // On mouse enter
-	  $(this).closest('section').find('.img-special').toggleClass('hidden');
-	},
-	function() {
-	  // On mouse leave
-	  $(this).closest('section').find('.img-special').toggleClass('hidden');
-	}
-  );
+//   $('.js-overlay').hover(
+// 	function() {
+// 	  // On mouse enter
+// 	  $(this).closest('section').find('.img-overlay').toggleClass('hidden');
+// 	},
+// 	function() {
+// 	  // On mouse leave
+// 	  $(this).closest('section').find('.img-overlay').toggleClass('hidden');
+// 	}
+//   );
+
+$('.js-bombs1944-66').on('change', function(event) {
+	// Prevent the click event from bubbling up to the parent div
+	event.stopPropagation();
+  
+	// Toggle the .img-special class based on whether the checkbox is checked or not
+	$(this).closest('section').find('.img-bombs1944-66').toggleClass('hidden');
+  });
+  $('.js-bombs1966-81').on('change', function(event) {
+	// Prevent the click event from bubbling up to the parent div
+	event.stopPropagation();
+  
+	// Toggle the .img-special class based on whether the checkbox is checked or not
+	$(this).closest('section').find('.img-bombs1966-81').toggleClass('hidden');
+  });
+  $('.js-os194473').on('change', function(event) {
+	// Prevent the click event from bubbling up to the parent div
+	event.stopPropagation();
+  
+	// Toggle the .img-special class based on whether the checkbox is checked or not
+	$(this).closest('section').find('.img-os194473').toggleClass('hidden');
+  });  
 
  // Scroll to the relevant section when the marker is clicked 
  $('.marker a').on('click', function(event) {
@@ -299,6 +321,79 @@ $(document).ready(function() {
   });
   
 
+// CLICK AND DRAG TO MOVE MAP
 
+// let isDragging = false;
+// let lastX = 0;
+// let lastY = 0;
+// let dragThreshold = 5;  // Threshold for detecting a drag (in pixels)
+// let dragSpeedFactor = 5;  // Adjust this factor to control the speed of the drag (higher = faster)
 
-  
+// // mousedown on .image
+// $('.map-zoomed .image').on('mousedown', function(event) {
+//   // Prevent default click behavior
+//   event.preventDefault();
+
+//   // Set dragging state to false initially
+//   isDragging = false;
+
+//   // Capture initial mouse position
+//   lastX = event.pageX;
+//   lastY = event.pageY;
+
+//   // Disable the parent div click event during dragging
+//   $(this).on('click', function(e) {
+//     if (isDragging) {
+//       // Stop click event if dragging is true (don't trigger click event)
+//       e.stopImmediatePropagation();
+//     }
+//   });
+
+//   // Set up the drag event on mousemove
+//   $(document).on('mousemove', function(event) {
+//     // Calculate the distance moved
+//     let deltaX = Math.abs(event.pageX - lastX);
+//     let deltaY = Math.abs(event.pageY - lastY);
+
+//     // Check if the mouse has moved beyond the threshold (i.e., user is dragging)
+//     if (deltaX > dragThreshold || deltaY > dragThreshold) {
+//       isDragging = true;
+//     }
+
+//     // If dragging, update the background position of all .img divs
+//     if (isDragging) {
+//       let deltaXMove = (event.pageX - lastX) * dragSpeedFactor;  // Multiply by speed factor
+//       let deltaYMove = (event.pageY - lastY) * dragSpeedFactor;  // Multiply by speed factor
+
+//       // Update background position of all .img divs inside the .image container
+//       $('.image .img').each(function() {
+//         let currentPosition = $(this).css('background-position').split(' ');
+//         let currentX = parseInt(currentPosition[0], 10);
+//         let currentY = parseInt(currentPosition[1], 10);
+
+//         $(this).css('background-position', (currentX + deltaXMove) + 'px ' + (currentY + deltaYMove) + 'px');
+//       });
+
+//       // Update the last mouse position for the next move
+//       lastX = event.pageX;
+//       lastY = event.pageY;
+//     }
+//   });
+
+//   // When mouse button is released, stop dragging
+//   $(document).on('mouseup', function() {
+//     // Stop the drag behavior
+//     if (isDragging) {
+//       isDragging = false;
+//     }
+
+//     // Remove the mousemove and mouseup listeners
+//     $(document).off('mousemove');
+//     $(document).off('mouseup');
+//   });
+// });
+
+// // Regular click event on .image
+// $('.image').on('click', function() {
+//   console.log('Parent image clicked!');
+// });

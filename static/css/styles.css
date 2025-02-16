@@ -1,14 +1,29 @@
+
+:root {
+  --fcf-green: rgba(56,123,91,1);
+  --fcf-darkgreen: rgba(27,69,87,1);
+  --fcf-lightgreen: rgba(213,228,217,1);
+}
+
+
+
 body {
   margin: 0;
   font-family: 'Be Vietnam Pro', Arial, sans-serif;
+  /* font-family: 'Nunito', Arial, sans-serif; */
 }
 
 header {
   padding: 40px;
-  background-color: #eee;
+  /* background-color: #eee; */
+  background-color: var(--fcf-green);
+  color: var(--fcf-lightgreen);
 }
-.header.is-pinned {
-  background-color: yellow;
+header li {
+  margin-bottom: 8px;
+}
+header a {
+  color: #fff;
 }
 
 .container {
@@ -38,11 +53,14 @@ section {
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: #333;
+  background-color: var(--fcf-darkgreen);
   /* background-size: contain; */
   background-repeat: no-repeat;
   /* border: 1px solid red; */
   transition: background-position 0.3s ease;
+}
+.img-overlay {
+  background-color: transparent;
 }
 .map-fit .img {
   background-size: contain;
@@ -59,26 +77,42 @@ section {
   background-color: rgba(255, 255, 255, 0.4);
 }
 .js-special {
-  border-bottom: 1px dashed #333;
+  /* border-bottom: 1px dashed #333; */
+  border: 1px solid #999;
+  border-radius: 10px;
   font-size: .8em;
   padding: 0 5px;
-  background: #ccc;
+  background: #fff;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.icon-small {
+  font-size: .9em;
 }
 
 #img-1940 {
   /* background-image: url('../img/1940-test.jpg'); */
-  background-image: url('../img/1940.jpg');
+  /* background-image: url('../img/1940.jpg'); */
+  background-image: url('../img/1940-sharp.jpg');
 }
 #img-1966 {
     /* background-image: url('../img/1966-test.jpg'); */
-    background-image: url('../img/1966.jpg');
+    /* background-image: url('../img/1966.jpg'); */
+    background-image: url('../img/1966-sharp.jpg');
 }
-#img-1940-bombs {
-  background-image: url('../img/1940-bombs.jpg');
+.img-bombs1940-66 {
+  background-image: url('../img/1940-bombs-transparent.png');
+}
+.img-bombs1966-81 {
+  background-image: url('../img/1966-81-bombs-transparent.png');
+}
+.img-os194473 {
+  background-image: url('../img/1966-81-map-transparent.png');
 }
 #img-1966b {
   /* background-image: url('../img/1966b-test.jpg'); */
-  background-image: url('../img/1966b.jpg');
+  /* background-image: url('../img/1966b.jpg'); */
+  background-image: url('../img/1966b-sharp.jpg');
 }
 #img-1981 {
     /* background-image: url('../img/1981-test.jpg'); */
