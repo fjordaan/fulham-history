@@ -21,36 +21,37 @@ preloadImages([
 // With ChatGPT improvements that accounts for the height of .section-header changing
 // (It adds a delay). Also to work on multiple .section-headers. Also to only
 // fire when stuck to the top of the screen.
-document.addEventListener("DOMContentLoaded", () => {
-	const sectionHeaders = document.querySelectorAll(".section-header");
+
+
+// document.addEventListener("DOMContentLoaded", () => {
+// 	const sectionHeaders = document.querySelectorAll(".section-header");
   
-	if (sectionHeaders.length === 0) return;
+// 	if (sectionHeaders.length === 0) return;
   
-	sectionHeaders.forEach((header) => {
-	  let isPinned = false;
-	  let timeout;
+// 	sectionHeaders.forEach((header) => {
+// 	  let isPinned = false;
+// 	  let timeout;
   
-	  const observer = new IntersectionObserver(
-		([entry]) => {
-		  clearTimeout(timeout); // Reset debounce timer
+// 	  const observer = new IntersectionObserver(
+// 		([entry]) => {
+// 		  clearTimeout(timeout); // Reset debounce timer
   
-		  timeout = setTimeout(() => {
-			const rect = header.getBoundingClientRect();
-			const shouldPin = entry.intersectionRatio < 1 && rect.top <= 0; 
+// 		  timeout = setTimeout(() => {
+// 			const rect = header.getBoundingClientRect();
+// 			const shouldPin = entry.intersectionRatio < 1 && rect.top <= 0; 
   
-			if (shouldPin !== isPinned) {
-			  isPinned = shouldPin;
-			  header.classList.toggle("is-pinned", shouldPin);
-			}
-		  }, 100); // Adjust debounce delay if needed
-		},
-		{ threshold: [1] }
-	  );
+// 			if (shouldPin !== isPinned) {
+// 			  isPinned = shouldPin;
+// 			  header.classList.toggle("is-pinned", shouldPin);
+// 			}
+// 		  }, 100); // Adjust debounce delay if needed
+// 		},
+// 		{ threshold: [1] }
+// 	  );
   
-	  observer.observe(header);
-	});
-  });
-  
+// 	  observer.observe(header);
+// 	});
+//   });
   
   
 

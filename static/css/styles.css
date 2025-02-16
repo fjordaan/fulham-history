@@ -137,8 +137,10 @@ section {
   margin-right: -40px;
   padding: 32px 40px;
   border-bottom: 1px solid #ccc;
-  background-color: white;
+  /* background-color: white; */
+  background-color: var(--fcf-lightgreen);
   /* transition: padding 0.1s ease; */
+  color: var(--fcf-darkgreen);
 }
 .section-header.is-pinned {
   padding: 12px 40px;
@@ -154,7 +156,7 @@ section {
   margin: 0 0 0 0;
   /* font-style: italic; */
   font-size: 16px;
-  color: #999;
+  color: #666;
 }
 
 .buttons {
@@ -249,7 +251,9 @@ section {
 }
 #section-1966-1981 .markers {
   aspect-ratio: 2053 / 1975;
-  /* border-color: cyan; */
+}
+#section-1981-1990 .markers {
+  aspect-ratio: 2102 / 2345;
 }
 
 .map-zoomed .markers {
@@ -352,6 +356,7 @@ section {
 }
 .feature h3 {
   margin-top: 0;
+  color: var(--fcf-darkgreen);
 }
 .feature p {
   font-family: 'Crimson Text', Georgia, serif;
@@ -472,6 +477,63 @@ section {
   width: 8.96%;
   height: 8.96%;
 }
+.marker-1981-90-bayonne {
+  left: 9.30%;
+  top: 21.88%;
+  width: 21.88%;
+  height: 21.88%;
+}
+
+.marker-1981-90-manbre {
+  left: 51.71%;
+  top: 30.78%;
+  width: 30.78%;
+  height: 30.78%;
+}
+.marker-1981-90-richardrogers {
+  left: 10.47%;
+  top: 11.75%;
+  width: 11.75%;
+  height: 11.75%;
+}
+.marker-1981-90-docks {
+  left: 13.37%;
+  top: 11.75%;
+  width: 11.75%;
+  height: 11.75%;
+}
+.marker-1981-90-aintree {
+  left: 13.37%;
+  top: 11.75%;
+  width: 11.75%;
+  height: 11.75%;
+}
+.marker-1981-90-rowberry {
+  left: 19.55%;
+  top: 11.75%;
+  width: 11.75%;
+  height: 11.75%;
+}
+.marker-1981-90-lillierec {
+  left: 50.00%;
+  top: 15.32%;
+  width: 15.32%;
+  height: 15.32%;
+}
+.marker-1981-90-coda {
+  left: 71.88%;
+  top: 19.27%;
+  width: 19.27%;
+  height: 19.27%;
+}
+.marker-1981-90-fulhamcem {
+  left: 51.05%;
+  top: 21.41%;
+  width: 21.41%;
+  height: 21.41%;
+}
+
+
 
 
 
@@ -498,8 +560,9 @@ section {
     height: auto;
   }
   .section-header {
-    padding-left: 20px;
-    padding-right: 20px;
+    /* padding-left: 20px;
+    padding-right: 20px; */
+    padding: 10px 20px;
     margin: 0 -20px;
   }
   .section-header.is-pinned {
@@ -513,6 +576,7 @@ section {
   }
   .section-subtitle {
     font-size: 13px;
+    display: none;
   }
   .content {
     padding: 0 20px;
