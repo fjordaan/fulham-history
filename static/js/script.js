@@ -187,6 +187,54 @@ $(document).ready(function() {
 			"Xpos": 259,
 			"Ypos": 1437,
 			"Radius": 184
+		},
+		"1981-90-manbre": {
+			"Name": "Manbré sugar refinery and Hammersmith Distillery",
+			"Xpos": 0,
+			"Ypos": 218,
+			"Radius": 460
+		},
+		"1981-90-bayonne": {
+			"Name": "Bayonne Estate and Abbey Gardens",
+			"Xpos": 1087,
+			"Ypos": 418,
+			"Radius": 647
+		},
+		"1981-90-richardrogers": {
+			"Name": "Richard Rogers Partnership",
+			"Xpos": 220,
+			"Ypos": 796,
+			"Radius": 247
+		},
+		"1981-90-docks": {
+			"Name": "Thames docks",
+			"Xpos": 281,
+			"Ypos": 1024,
+			"Radius": 247
+		},
+		"1981-90-rowberry": {
+			"Name": "Rowberry Mead",
+			"Xpos": 411,
+			"Ypos": 1602,
+			"Radius": 247
+		},
+		"1981-90-lillierec": {
+			"Name": "Lillie Rec",
+			"Xpos": 1051,
+			"Ypos": 1007,
+			"Radius": 322
+		},
+		"1981-90-coda": {
+			"Name": "Coda Centre",
+			"Xpos": 1511,
+			"Ypos": 1682,
+			"Radius": 405
+		},
+		"1981-90-fulhamcem": {
+			"Name": "Fulham Cemetery",
+			"Xpos": 1073,
+			"Ypos": 1329,
+			"Radius": 450
 		}
 	  }
 	  
