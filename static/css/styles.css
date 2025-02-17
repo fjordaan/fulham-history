@@ -25,6 +25,9 @@ header li {
 header a {
   color: #fff;
 }
+header p {
+  max-width: 75%;
+}
 
 .container {
   position: relative;
@@ -540,8 +543,18 @@ section {
   header {
     padding: 20px;
   }
+  header p {
+    max-width: none;
+  }
   section {
     flex-direction: column;
+  }
+  .markers:hover::after {
+    content: 'Tap to change' !important;
+    bottom: auto !important;
+    top: 10px;
+    right: 10px;
+    /* transform: translateX(0px) !important; */
   }
   .image {
     order: 0;
